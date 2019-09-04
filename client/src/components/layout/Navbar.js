@@ -10,7 +10,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li><Link to="/dashboard">
       <i className="fas fa-user"></i>{ '' }
-      <span className="hide-sm">Dashboad</span>
+      <span className="hide-sm">Dashboard</span>
       </Link></li>
       <li>
         <a onClick={ logout } href="#!">
