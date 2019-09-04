@@ -8,10 +8,17 @@ import logo from "../../img/logo_title.png";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
-      <li><Link to="/dashboard">
-      <i className="fas fa-user"></i>{ '' }
-      <span className="hide-sm">Dashboard</span>
-      </Link></li>
+      <li>
+        <Link to="/profiles">
+          Developers
+        </Link>
+      </li>
+      <li>
+        <Link to="/dashboard">
+          <i className="fas fa-user"></i>{ '' }
+          <span className="hide-sm">Dashboard</span>
+        </Link>
+      </li>
       <li>
         <a onClick={ logout } href="#!">
           <i className="fas fa-sign-out-alt"></i>{ '' }
@@ -23,7 +30,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <ul>
-        <li className="button"><a href="#!">Developers</a></li>
+      <li>
+        <Link to="/profiles">
+          Developers
+        </Link>
+      </li>
         <li className="button"><Link to="/register">Register</Link></li>
         <li className="button"><Link to="/login">Login</Link></li>
       </ul>
