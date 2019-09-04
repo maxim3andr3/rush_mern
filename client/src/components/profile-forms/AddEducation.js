@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile'
 
-const addEducation = ({ addEducation, history }) => {
+const AddEducation = ({ addEducation, history }) => {
     const [formData, setFormData] = useState({
         school: '',
         degree: '',
@@ -101,7 +101,7 @@ const addEducation = ({ addEducation, history }) => {
         </div>
         <input 
         type="submit" class="btn btn-primary my-1" />
-        <a class="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <Link class="btn btn-light my-1" to="/dashboard">Go Back</Link>
         </form>
         </Fragment>
     )
@@ -111,4 +111,4 @@ addEducation.PropType = {
     addEducation: PropTypes.func.isRequired
 }
 
-export default connect(null, { addEducation })(addEducation)
+export default connect(null, { addEducation })(AddEducation)
