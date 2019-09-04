@@ -39,6 +39,34 @@ const ProfileSchema = new mongoose.Schema({
             default: Date.now
         }
     }],
+    // education: [{
+    //     school: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     degree: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     fieldofstudy: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     from: {
+    //         type: Date,
+    //         required: true
+    //     },
+    //     to: {
+    //         type: Date,
+    //     },
+    //     current: {
+    //         type: Boolean,
+    //         default: false
+    //     },
+    //     description: {
+    //         type: String,
+    //     }
+    // }],
     social: [{
         twitter: {
             type: String,
