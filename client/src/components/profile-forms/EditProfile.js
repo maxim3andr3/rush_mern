@@ -118,15 +118,15 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
                 <input type="text" placeholder="Facebook URL" name="facebook" value={facebook} onChange={e => onChange(e)}/>
                 </div>
 
-                <div class="form-group social-input">
-                <i class="fab fa-linkedin fa-2x"></i>
+                <div className="form-group social-input">
+                <i className="fab fa-linkedin fa-2x"></i>
                 <input type="text" placeholder="Linkedin URL" name="linkedin" value={linkedin} onChange={e => onChange(e)}/>
                 </div>
             </Fragment>
         )}
 
-        <input type="submit" class="btn btn-primary my-1" />
-        <Link class="btn btn-light my-1" to="/dashboard">Go Back</Link>
+        <input type="submit" className="btn btn-primary my-1" />
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
         </Fragment>
     );
