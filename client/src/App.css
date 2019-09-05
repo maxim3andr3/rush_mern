@@ -430,6 +430,7 @@ button {
     'exp edu'
     'github github';
   grid-gap: 1rem;
+  width: 60%;
 }
 
 .profile-top {
@@ -584,6 +585,11 @@ button {
   margin-top:100px;
 }
 
+.Mid {
+  display: inline-block;
+  padding: 25px;
+  /* float: left; */
+}
 
 .column {
   float: left;

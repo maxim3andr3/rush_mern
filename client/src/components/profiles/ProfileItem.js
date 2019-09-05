@@ -12,6 +12,7 @@ const ProfileItem = ({
 }) => {
     return (
 
+<div className="Mid">
         <div className="profile bg-light">
             <img src={avatar} alt="" className="round-img" />
             <div>
@@ -23,6 +24,7 @@ const ProfileItem = ({
                 </Link></center>
             </div>
         </div>
+    </div>
 
     )
 };
