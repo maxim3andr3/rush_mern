@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import pp from "../../img/profile.png";
 
 const Dashboard = ({
     getCurrentProfile,
@@ -20,11 +21,16 @@ const Dashboard = ({
     <Spinner />
     ) : (
         <Fragment>
-        <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()}>
-                <i className="fas fa-user-minus"></i> Delete my account
-            </button>
+        <div className="row">
+        <div className="test_left">
+        <Link to="/"><img src={pp} className="pp" /></Link> 
+            <div className="other">
+                <p> profile </p>
+                <p> story </p>
+                <p> followers </p>
+            </div>
         </div>
+        <div className="test_right">
         <h1 className="large text-primary">Dashboard</h1>
         <p className="lead">
             <i className="fas fa-user"></i> Welcome { user && user.name}</p>
@@ -37,6 +43,8 @@ const Dashboard = ({
                     <p>You have not yet setup a profile, please add some info</p>
                     <Link to='/create-profile' className="btn btn-primary my-1">Create Profile</Link>
                 </Fragment>)}
+        </div>
+        </div>
         </Fragment>
     );
 };

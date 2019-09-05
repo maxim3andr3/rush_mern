@@ -11,17 +11,21 @@ const ProfileItem = ({
     }
 }) => {
     return (
+
+<div className="Mid">
         <div className="profile bg-light">
             <img src={avatar} alt="" className="round-img" />
             <div>
-                <h2>{name}</h2>
-                <p>{firstname} {lastname}</p>
-                <p className="my-1">{location}</p>
-                <Link to={`/profile/${_id}`} className="btn btn-primary">
+                <center><h2>{name} {lastname}</h2></center>
+                {/* <p>{firstname} {lastname}</p> */}
+                {/* <p className="my-1">{location}</p> */}
+                <center><Link to={`/profile/${_id}`} className="btn btn-primary">
                     View profile
-                </Link>
+                </Link></center>
             </div>
         </div>
+    </div>
+
     )
 };
 
