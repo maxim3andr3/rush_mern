@@ -36,7 +36,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             facebook: loading || !profile.social ? '' : profile.social.facebook,
             linkedin: loading || !profile.social ? '' : profile.social.linkedin,
         })
-    }, [loading]);
+    }, [loading, getCurrentProfile]);
 
     const {
     firstname,
@@ -62,7 +62,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
         <Fragment>
                 <div  className="container2"><div class="rowdb">
         <div class="columnsleft">
-        <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil picture" /></center>
+        <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil" /></center>
           <h2><center>{ profile && profile.firstname}</center></h2></div>
           <ul>
             <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
