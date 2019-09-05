@@ -2,7 +2,9 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Link, withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile, getCurrentProfile } from '../../actions/profile'
+import { createProfile, getCurrentProfile } from '../../actions/profile';
+import profil from "../../img/profil.png";
+
 
 
 const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentProfile, history }) => {
@@ -34,7 +36,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             facebook: loading || !profile.social ? '' : profile.social.facebook,
             linkedin: loading || !profile.social ? '' : profile.social.linkedin,
         })
-    }, [loading]);
+    }, [loading, getCurrentProfile]);
 
     const {
     firstname,
@@ -58,51 +60,61 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 
     return (
         <Fragment>
-          <h1 className="large text-primary">
-        Create Your Profile
-      </h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
-      </p>
-      <small>* = required field</small>
+                <div  className="container2"><div class="rowdb">
+        <div class="columnsleft">
+        <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil" /></center>
+          <h2><center>{ profile && profile.firstname}</center></h2></div>
+          <ul>
+            <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
+            <li className="nav_dashboard"><Link to="/">FOLLOWERS</Link></li>
+            <li className="nav_dashboard red"><Link to="/">DELETE</Link></li>
+          </ul>
+        </div>
+        <div class="columnsright">
+          <h2>Edit Your Profile</h2>
+          <small>* required field</small>
       <form className="form" onSubmit={e => onSubmit(e)}>
  
-        <div className="form-group">
-          <input type="text" placeholder="firstname" name="firstname" value={firstname} onChange={e => onChange(e)}/>
-          <small className="form-text">Please enter your National Firstname as state in your Identity card</small>
-        </div>
-
-        <div className="form-group">
-          <input type="text" placeholder="lastname" name="lastname" value={lastname} onChange={e => onChange(e)}/>
-          <small className="form-text">Please enter your National Lastname as state in your Identity card</small>
-        </div>
-        
-        <div className="form-group">
-          <input type="text" placeholder="age" name="age" value={age} onChange={e => onChange(e)}/>
-          <small className="form-text">Please enter your legal age</small>
-        </div> 
-
-        <div className="form-group">
-          <input type="text" placeholder="Website" name="website" value={website} onChange={e => onChange(e)}/>
-          <small className="form-text">Could be your own or a company website</small>
-        </div>
-        
-        <div className="form-group">
-          <input type="text" placeholder="Location" name="location" value={location} onChange={e => onChange(e)}/>
-          <small className="form-text">City & state suggested (eg. Trappes)</small>
-        </div>
-
-        <div className="form-group">
-          <textarea placeholder="A short bio of yourself" name="bio" value={bio} onChange={e => onChange(e)}></textarea>
-          <small className="form-text">Tell us a little about yourself</small>
-        </div>
+        <table>
+        <tr>
+          <td>
+          <small className="form-text">Firstname</small>
+            <input type="text" placeholder="firstname" name="firstname" value={firstname} onChange={e => onChange(e)}/> 
+          </td>
+          <td>
+          <small className="form-text">Lastname</small>
+            <input type="text" placeholder="lastname" name="lastname" value={lastname} onChange={e => onChange(e)}/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <small className="form-text">City</small>
+            <input type="text" placeholder="Location" name="location" value={location} onChange={e => onChange(e)}/>
+          </td>
+          <td>
+            <small className="form-text">Age</small>
+            <input type="text" placeholder="age" name="age" value={age} onChange={e => onChange(e)}/>
+          </td>
+        </tr>
+        <tr>
+          <td COLSPAN="2">
+            <small className="form-text">My website</small>
+            <input type="text" placeholder="Website" name="website" value={website} onChange={e => onChange(e)}/>
+          </td>
+        </tr>
+        <tr>
+          <td COLSPAN="2">
+          <small className="form-text">My description</small> 
+          <textarea placeholder="A short bio of yourself" name="bio" rows="5" cols="23" value={bio} onChange={e => onChange(e)}></textarea>
+          </td>
+        </tr>
+      </table>
 
         <div className="my-2">
           <button onClick={() => toggleSocialInputs(!displaySocialInputs)} type="button" className="btn btn-light">
             Add Social Network Links
           </button>
-          <span>Optional</span>
+          <span>(Optional)</span>
         </div>
 
         { displaySocialInputs && (
@@ -118,17 +130,22 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
                 <input type="text" placeholder="Facebook URL" name="facebook" value={facebook} onChange={e => onChange(e)}/>
                 </div>
 
-                <div class="form-group social-input">
-                <i class="fab fa-linkedin fa-2x"></i>
+                <div className="form-group social-input">
+                <i className="fab fa-linkedin fa-2x"></i>
                 <input type="text" placeholder="Linkedin URL" name="linkedin" value={linkedin} onChange={e => onChange(e)}/>
                 </div>
             </Fragment>
         )}
-
-        <input type="submit" class="btn btn-primary my-1" />
-        <Link class="btn btn-light my-1" to="/dashboard">Go Back</Link>
+        
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
+        <input type="submit" className="btn btn-primary my-1" />
+        
       </form>
-        </Fragment>
+        </div>
+    </div></div>
+
+      
+    </Fragment>
     );
 };
 
