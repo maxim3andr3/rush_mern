@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
+import logo from "../../img/logo.png";
 
 
 const Login = ({ login, isAuthenticated }) => {
@@ -27,11 +28,10 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Sign In</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Sign into Your Account
-      </p>
+    <div className="register login_bg"><Fragment>
+      <center><div className="middle">
+      <img src={logo} className="minilogo" alt="Logo MicroBloggos" />
+        <h1 className="large text-primary">Login</h1>
       <form className='form' onSubmit={e => onSubmit(e)}>
         
         <div className='form-group'>
@@ -59,8 +59,7 @@ const Login = ({ login, isAuthenticated }) => {
       <p className='my-1'>
           No account yet ? <Link to='/register'>Sign Up</Link>
       </p>
-
-    </Fragment>
+      </div></center></Fragment></div>
   );
 };
 
