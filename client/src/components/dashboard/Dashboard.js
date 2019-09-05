@@ -23,7 +23,7 @@ const Dashboard = ({
         <Fragment>
         <div className="row">
         <div className="test_left">
-        <Link to="/"><img src={pp} className="pp" /></Link> 
+        <Link to="/"><img src={pp} className="pp" alt="" /></Link> 
             <div className="other">
                 <p> profile </p>
                 <p> story </p>
