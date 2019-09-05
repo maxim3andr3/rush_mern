@@ -6,17 +6,17 @@ const ProfileAbout = ({ profile: {
     firstname,
 }}) => {
     return (
-        <div class="profile-about bg-light p-2">
+        <div className="profile-about bg-light p-2">
         {bio && (
             <Fragment>
-                <h2 class="text-primary">{ firstname }s bio</h2>
+                <h2 className="text-primary">{ firstname }s bio</h2>
                 <p>
                     {bio}
                 </p>
             </Fragment>
 
         )}
-          <div class="line"></div>
+          <div className="line"></div>
         </div>
     )
 }
