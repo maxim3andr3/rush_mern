@@ -35,16 +35,16 @@ const PostItem = ({
 
       {showActions && <Fragment>
       <button onClick={e => addLike(_id)} type="button" className="btn btn-light">
-        <i className="fas fa-thumbs-up"></i>{' '}
+        <i className="fas fa-heart"></i>{' '}
         <span>{likes.length > 0 && (
             <span>{likes.length}</span>
         )}</span>
       </button>
       <button  onClick={e => removeLike(_id)} type="button" className="btn btn-light">
-        <i className="fas fa-thumbs-down"></i>
+        <i className="fas fa-heart-broken"></i>
       </button>
       <Link to={`/posts/${_id}`} className="btn btn-primary">
-        Discussion {comments.length > 0 && (
+        see discussion {comments.length > 0 && (
             <span className='comment-count'>{comments.length}</span>
         )}
       </Link>
