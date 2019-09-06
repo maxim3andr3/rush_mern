@@ -22,6 +22,7 @@ const PostForm = ({ addPost }) => {
             placeholder="Create a post"
             value={text}
             onChange={e => setText(e.target.value)}
+            maxLength='130'
             required
           ></textarea>
           <input type="submit" className="btn btn-success" value="Submit" />
