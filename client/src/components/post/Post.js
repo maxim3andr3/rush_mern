@@ -8,21 +8,21 @@ import { getPost } from '../../actions/post';
 import CommentForm from './CommentForm';
 import CommentItem from './CommentItem';
 import profil from "../../img/profil.png";
+import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 
 
-const Post = ({ getPost, post: { post, loading }, match }) => {
-    useEffect(() => {
-        getPost(match.params.id);
-    }, [getPost, match]);
+const Post = ({ getPost, post: { post, loading }, match, getCurrentProfile, profile: {profile}}) => {
+    useEffect(() => { getPost(match.params.id);}, [getPost, match]);
+    useEffect(() => { getCurrentProfile();}, [getCurrentProfile]);
 
-    return loading || post === null ? (
+    return (loading && profile === null) || post === null ? (
     <Spinner />
     ) : (
 <Fragment>
         <div  className="container2"><div class="rowdb">
         <div class="columnsleft">
         <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil" /></center>
-          <h2></h2></div>
+        <h2><center>{ profile && profile.firstname}</center></h2></div>
           <ul>
             <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
             <li className="nav_dashboard"><Link to="/edit-profile">EDIT PROFILE</Link></li>
@@ -56,10 +56,13 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
 Post.propTypes = {
     getPost: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
+    profile: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    post: state.post
+    post: state.post,
+    profile: state.profile
 })
 
-export default connect(mapStateToProps, { getPost })(Post);
+export default connect(mapStateToProps, { getPost,getCurrentProfile })(Post);
