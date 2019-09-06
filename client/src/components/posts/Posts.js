@@ -7,7 +7,6 @@ import PostItem from './PostItem';
 import { getPosts } from '../../actions/post';
 import PostForm from './PostForm';
 import profil from "../../img/profil.png";
-import DashboardActions from '../dashboard/DashboardActions';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
     useEffect(() => {
@@ -21,18 +20,17 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
           <h2></h2></div>
           <ul>
             <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
-
-
-            {/* <li className="nav_dashboard"><Link to="/">EDIT PROFILE</Link></li> */}
+            <li className="nav_dashboard"><Link to="/edit-profile">EDIT PROFILE</Link></li>
+            <li className="nav_dashboard green"><Link to="/posts">PUBLISH POST</Link></li>
             {/* <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li> */}
           </ul>
         </div>
         <div class="columnsright">
 
             <h1 className="large text-primary">Posts</h1>
-            <p className="lead">
+            {/* <p className="lead">
                 <i className="fas fa-user"></i>Welcome to the community
-            </p>
+            </p> */}
             <PostForm></PostForm>
             <div className="posts">
                 {posts.map(post => (
