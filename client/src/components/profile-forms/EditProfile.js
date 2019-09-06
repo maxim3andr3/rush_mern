@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 import profil from "../../img/profil.png";
+import DashboardActions from '../dashboard/DashboardActions';
 
 
 
@@ -66,7 +67,16 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
           <h2><center>{ profile && profile.firstname}</center></h2></div>
           <ul>
             <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
-            <li className="nav_dashboard"><Link to="/">FOLLOWERS</Link></li>
+            {profile !== null ? (
+                <Fragment>
+                    <DashboardActions />
+                </Fragment>
+            ) : (
+                <Fragment>
+                    <li className="nav_dashboard"><Link to='/create-profile'>CREATE PROFILE</Link></li>
+                </Fragment>)}
+
+            {/* <li className="nav_dashboard"><Link to="/">EDIT PROFILE</Link></li> */}
             <li className="nav_dashboard red"><Link to="/">DELETE</Link></li>
           </ul>
         </div>
