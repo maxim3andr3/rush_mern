@@ -608,7 +608,7 @@ button {
 }
 .columnsleft {
   float: left;
-  width: auto;
+  width: 250px;
   height: 100%; /* Should be removed. Only for demonstration */
   border:7px solid white;
 }
@@ -622,6 +622,9 @@ button {
   background-color:#F24333!Important;
 }
 
+.green{
+  background-color:#28a745!Important;
+}
 
 /* Clear floats after the columns */
 .row:after {
