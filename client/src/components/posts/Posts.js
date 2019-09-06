@@ -1,17 +1,34 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PostItem from './PostItem';
 import { getPosts } from '../../actions/post';
 import PostForm from './PostForm';
+import profil from "../../img/profil.png";
+import DashboardActions from '../dashboard/DashboardActions';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
     useEffect(() => {
         getPosts();
     }, [getPosts]);
     return loading ? <Spinner /> : (
-        <Fragment>
+<Fragment>
+        <div  className="container2"><div class="rowdb">
+        <div class="columnsleft">
+        <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil" /></center>
+          <h2></h2></div>
+          <ul>
+            <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
+
+
+            {/* <li className="nav_dashboard"><Link to="/">EDIT PROFILE</Link></li> */}
+            {/* <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li> */}
+          </ul>
+        </div>
+        <div class="columnsright">
+
             <h1 className="large text-primary">Posts</h1>
             <p className="lead">
                 <i className="fas fa-user"></i>Welcome to the community
@@ -22,7 +39,14 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
                     <PostItem key={post._id} post={post} />
                 ))}
             </div>
-        </Fragment>
+
+            
+      
+        </div>
+    </div></div>
+
+      
+    </Fragment>
     );
 };
 
