@@ -77,7 +77,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
                 </Fragment>)}
 
             {/* <li className="nav_dashboard"><Link to="/">EDIT PROFILE</Link></li> */}
-            <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li>
+            {/* <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li> */}
           </ul>
         </div>
         <div class="columnsright">
