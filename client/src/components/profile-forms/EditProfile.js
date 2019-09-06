@@ -36,7 +36,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             facebook: loading || !profile.social ? '' : profile.social.facebook,
             linkedin: loading || !profile.social ? '' : profile.social.linkedin,
         })
-    }, [loading, getCurrentProfile, profile]);
+    }, [loading, getCurrentProfile]);
 
     const {
     firstname,
