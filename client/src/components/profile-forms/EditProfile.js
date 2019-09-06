@@ -20,7 +20,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
         linkedin: ''
     });
 
-    const [displaySocialInputs, toggleSocialInputs] = useState(false);
+    const [displaySocialInputs, toggleSocialInputs,] = useState(false);
 
     useEffect(() => {
         getCurrentProfile();
@@ -36,7 +36,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             facebook: loading || !profile.social ? '' : profile.social.facebook,
             linkedin: loading || !profile.social ? '' : profile.social.linkedin,
         })
-    }, [loading, getCurrentProfile]);
+    }, [loading, getCurrentProfile, profile]);
 
     const {
     firstname,
