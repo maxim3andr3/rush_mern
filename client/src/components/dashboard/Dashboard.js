@@ -38,6 +38,7 @@ const Dashboard = ({
                 </Fragment>)}
 
             {/* <li className="nav_dashboard"><Link to="/">EDIT PROFILE</Link></li> */}
+            <li className="nav_dashboard green"><Link to="/posts">PUBLISH POST</Link></li>
             <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li>
           </ul>
         </div>
