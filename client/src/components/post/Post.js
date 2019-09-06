@@ -7,6 +7,7 @@ import PostItem from '../posts/PostItem';
 import { getPost } from '../../actions/post';
 import CommentForm from './CommentForm';
 import CommentItem from './CommentItem';
+import profil from "../../img/profil.png";
 
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
@@ -17,7 +18,20 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     return loading || post === null ? (
     <Spinner />
     ) : (
-    <Fragment>
+<Fragment>
+        <div  className="container2"><div class="rowdb">
+        <div class="columnsleft">
+        <div class="picturelayout"><center><img src={profil} className="profilpicture" alt="Profil" /></center>
+          <h2></h2></div>
+          <ul>
+            <li className="nav_dashboard"><a href="/dashboard">DASHBOARD</a></li>
+            <li className="nav_dashboard"><Link to="/edit-profile">EDIT PROFILE</Link></li>
+            <li className="nav_dashboard green"><Link to="/posts">PUBLISH POST</Link></li>
+            {/* <li className="nav_dashboard red"><Link to="/" onClick={() => deleteAccount()}>DELETE</Link></li> */}
+          </ul>
+        </div>
+        <div class="columnsright">
+
         <Link to='/posts' className='btn'>
             Back to posts
         </Link>
@@ -28,6 +42,13 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
                 <CommentItem key={comment._id} comment={comment} postId={post._id} />
             ))}
         </div>
+
+            
+      
+        </div>
+    </div></div>
+
+      
     </Fragment>
     );
 };
