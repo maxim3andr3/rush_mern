@@ -8,8 +8,8 @@ const CommentForm = ({ postId, addComment }) => {
 
     return (
         <div className="post-form">
-        <div className="bg-primary p">
-          <h3>Leave a comment</h3>
+        <div className="">
+          <h3>Add a comment to this post :</h3>
         </div>
         <form className="form my-1" onSubmit={e => {
             e.preventDefault();
@@ -19,13 +19,13 @@ const CommentForm = ({ postId, addComment }) => {
           <textarea
             name="text"
             cols="30"
-            rows="5"
+            rows="3"
             placeholder="Create a post"
             value={text}
             onChange={e => setText(e.target.value)}
             maxLength='130'
             required
-          ></textarea>
+          ></textarea><br></br>
           <input type="submit" className="btn btn-success" value="Submit" />
         </form>
       </div>
